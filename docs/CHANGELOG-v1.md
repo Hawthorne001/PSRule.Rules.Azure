@@ -29,6 +29,66 @@ See [upgrade notes][1] for helpful information when upgrading from previous vers
 
 ## Unreleased
 
+What's changed since v1.41.2:
+
+- General improvements:
+  - Added a new quickstart guide for using Azure Pipelines with PSRule by @that-ar-guy.  
+    [#3220](https://github.com/Azure/PSRule.Rules.Azure/pull/3220)
+
+## v1.41.2
+
+What's changed since v1.41.1:
+
+- Bug fixes:
+  - Fixed recursive lookup of cross module resources in the deployment by @BernieWhite.
+    [#3251](https://github.com/Azure/PSRule.Rules.Azure/issues/3251)
+    - This improves the ability to reference resource properties in the same parent deployment.
+    - Additionally, projection of runtime properties has been improved.
+  - Fixed literal strings may be incorrectly interpreted as expressions by @BernieWhite.
+    [#3252](https://github.com/Azure/PSRule.Rules.Azure/issues/3252)
+
+## v1.41.1
+
+What's changed since v1.41.0:
+
+- Bug fixes:
+  - Fixed incorrect generation of resource ID for tenant scoped deployments by @BernieWhite.
+    [#3237](https://github.com/Azure/PSRule.Rules.Azure/issues/3237)
+  - Fixed in-flight export of subscription resource type `Microsoft.Subscription` by @BernieWhite.
+    [#3231](https://github.com/Azure/PSRule.Rules.Azure/issues/3231)
+
+## v1.41.0
+
+What's changed since v1.40.0:
+
+- New features:
+  - Added December 2024 baselines `Azure.GA_2024_12` and `Azure.Preview_2024_12` by @BernieWhite.
+    [#3165](https://github.com/Azure/PSRule.Rules.Azure/issues/3165)
+    - Includes rules released before or during December 2024.
+    - Marked `Azure.GA_2024_09` and `Azure.Preview_2024_09` baselines as obsolete.
+- Updated rules:
+  - Azure Kubernetes Service:
+    - Updated `Azure.AKS.Version` to use `1.30.6` as the minimum version by @BernieWhite.
+      [#3206](https://github.com/Azure/PSRule.Rules.Azure/issues/3206)
+  - Container Registry:
+    - Updated documentation and promoted `Azure.ACR.AnonymousAccess` to GA by @BernieWhite.
+      [#3119](https://github.com/Azure/PSRule.Rules.Azure/issues/3119)
+      - Bumped rule set to `2024_12`.
+- General improvements:
+  - **Important change**: Deprecated rules with no clear WAF alignment by @BernieWhite.
+    [#3102](https://github.com/Azure/PSRule.Rules.Azure/issues/3102)
+    - The following rules are deprecated:
+      - `Azure.APIM.ProductTerms`
+- Engineering:
+  - Updated resource providers and policy aliases by @BernieWhite.
+    [#3166](https://github.com/Azure/PSRule.Rules.Azure/pull/3166)
+
+What's changed since pre-release v1.41.0-B0015:
+
+- No additional changes.
+
+## v1.41.0-B0015 (pre-release)
+
 What's changed since v1.40.0:
 
 - New features:
